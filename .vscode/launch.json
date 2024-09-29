@@ -1,0 +1,103 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "DaysInMonth",
+      "request": "launch",
+      "mainClass": "DaysInMonth"
+    },
+    {
+      "type": "java",
+      "name": "Triangle",
+      "request": "launch",
+      "mainClass": "Triangle"
+    },
+    {
+      "type": "java",
+      "name": "InputFromKeyboard",
+      "request": "launch",
+      "mainClass": "InputFromKeyboard"
+    },
+    {
+      "type": "java",
+      "name": "Ex61_option",
+      "request": "launch",
+      "mainClass": "Ex61_option"
+    },
+    {
+      "type": "java",
+      "name": "Ex6_Pt2",
+      "request": "launch",
+      "mainClass": "Ex6_Pt2"
+    },
+    {
+      "type": "java",
+      "name": "LinearSystem",
+      "request": "launch",
+      "mainClass": "LinearSystem"
+    },
+    {
+      "type": "java",
+      "name": "Ex6_Pt1",
+      "request": "launch",
+      "mainClass": "Ex6_Pt1"
+    },
+    {
+      "type": "java",
+      "name": "Ex5",
+      "request": "launch",
+      "mainClass": "Ex5"
+    },
+    {
+      "type": "java",
+      "name": "ShowTwoNumbers",
+      "request": "launch",
+      "mainClass": "OtherProjects.Lab01.ShowTwoNumbers"
+    },
+    {
+      "type": "java",
+      "name": "ShowTwoNumbers",
+      "request": "launch",
+      "mainClass": "ShowTwoNumbers"
+    },
+    {
+      "type": "java",
+      "name": "HelloNameDialog",
+      "request": "launch",
+      "mainClass": "HelloNameDialog"
+    },
+    {
+      "type": "java",
+      "name": "FirstDialog",
+      "request": "launch",
+      "mainClass": "FirstDialog"
+    },
+    {
+      "type": "java",
+      "name": "helloworld",
+      "request": "launch",
+      "mainClass": "helloworld"
+    },
+    {
+      "type": "java",
+      "name": "HelloWorld",
+      "request": "launch",
+      "mainClass": "HelloWorld"
+    },
+    {
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "request": "attach",
+      "type": "chrome",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": ".",
+      "program": "build/Debug/outDebug"
+    }
+  ]
+}
