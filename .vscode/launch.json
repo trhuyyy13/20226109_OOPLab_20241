@@ -2,6 +2,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Aims",
+      "request": "launch",
+      "mainClass": "Aims",
+      "projectName": "AimsProject (2)"
+    },
+    {
+      "type": "java",
+      "name": "StoreTest",
+      "request": "launch",
+      "mainClass": "hust.soict.ep.aims.store.StoreTest",
+      "projectName": "AimsProject (2)"
+    },
+    {
+      "type": "java",
+      "name": "TestPassingParameter",
+      "request": "launch",
+      "mainClass": "hust.soict.ep.aims.disc.TestPassingParameter",
+      "projectName": "AimsProject (2)"
+    },
+    {
+      "type": "java",
+      "name": "CartTest",
+      "request": "launch",
+      "mainClass": "hust.soict.ep.aims.cart.CartTest",
+      "projectName": "AimsProject (2)"
+    },
+    {
+      "type": "java",
+      "name": "StoreTest",
+      "request": "launch",
+      "mainClass": "StoreTest",
+      "projectName": "AimsProject (2)"
+    },
+    {
+      "type": "java",
       "name": "DaysInMonth",
       "request": "launch",
       "mainClass": "DaysInMonth"
