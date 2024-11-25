@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "OOP_Lab1/GarbageCreator",
+      "request": "launch",
+      "mainClass": "OOP_Lab1/GarbageCreator"
+    },
+    {
+      "type": "java",
       "name": "Aims",
       "request": "launch",
       "mainClass": "Aims",

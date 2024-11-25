@@ -1,4 +1,5 @@
-package hust.soict.ep.aims.cart;
+package hust.soict.ep.test.cart;
+import hust.soict.ep.aims.cart.Cart;
 import hust.soict.ep.aims.disc.DigitalVideoDisc;
 
 public class CartTest {

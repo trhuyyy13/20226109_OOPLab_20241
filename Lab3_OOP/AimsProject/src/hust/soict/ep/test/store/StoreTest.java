@@ -1,5 +1,6 @@
-package hust.soict.ep.aims.store;
+package hust.soict.ep.test.store;
 import hust.soict.ep.aims.disc.DigitalVideoDisc;
+import hust.soict.ep.aims.store.Store;
 
 public class StoreTest {
     public static void main(String[] args) {

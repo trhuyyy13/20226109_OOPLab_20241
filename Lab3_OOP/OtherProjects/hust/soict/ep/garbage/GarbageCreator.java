@@ -1,8 +1,3 @@
-package hust.soict.ep.garbage;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
 public class GarbageCreator {
     public static void main(String[] args) throws IOException {
         String filename = "/Users/macbook/Library/CloudStorage/OneDrive-HanoiUniversityofScienceandTechnology/TÀI LIỆU HỌC TẬP/IT3103 Lập trình hướng đối tượng/OOP_Lab_20241/Lab3_OOP/OtherProjects/hust/soict/ep/garbage/test.txt";
