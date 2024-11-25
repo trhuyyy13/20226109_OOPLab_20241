@@ -1,0 +1,31 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package hust.soict.ep.garbage;
+
+import java.util.Random;
+
+public class ConcatenationInLoops {
+   public ConcatenationInLoops() {
+   }
+
+   public static void main(String[] var0) {
+      Random var1 = new Random(123L);
+      long var2 = System.currentTimeMillis();
+      String var4 = "";
+
+      for(int var5 = 0; var5 < 65536; ++var5) {
+         var4 = var4 + var1.nextInt(2);
+      }
+
+      System.out.println(System.currentTimeMillis() - var2);
+      var1 = new Random(123L);
+      var2 = System.currentTimeMillis();
+      StringBuilder var7 = new StringBuilder();
+
+      for(int var6 = 0; var6 < 65536; ++var6) {
+         var7.append(var1.nextInt(2));
+      }
+
+      var4.makeConcatWithConstants<invokedynamic>(var4, var7.toString());
+      System.out.println(System.currentTimeMillis() - var2);
+   }
+}
