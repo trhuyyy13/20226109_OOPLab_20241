@@ -1,0 +1,121 @@
+Question 1: Which classes are aggregates of other classes? Checking all constructors 	of whole classes if they initialize for their parts?
+- Write constructors for parent and child classes. Remove redundant setter methods if any
+
+Lớp Book và CompactDisc là tập hợp của các lớp khác vì chúng chứa danh sách authors (trong Book) và tracks (trong CompactDisc).
+Ví dụ:
+Lớp Media (Lớp Cha)
+- package hust.soict.dsai.aims.media;
+
+public abstract class Media {
+    private int id;
+    private String title;
+    private String category;
+    private float cost;
+
+    // Constructor
+    public Media(int id, String title, String category, float cost) {
+        this.id = id;
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+
+    // Getters
+    public int getId() { return id; }
+    public String getTitle() { return title; }
+    public String getCategory() { return category; }
+    public float getCost() { return cost; }
+}
+Lớp Book (Lớp Con)package hust.soict.dsai.aims.media;
+
+import java.util.ArrayList;
+
+public class Book extends Media {
+    private ArrayList<String> authors;
+
+    // Constructor
+    public Book(int id, String title, String category, float cost) {
+        super(id, title, category, cost);
+        this.authors = new ArrayList<>();
+    }
+
+    // Thêm tác giả
+    public void addAuthor(String authorName) {
+        if (!authors.contains(authorName)) {
+            authors.add(authorName);
+        } else {
+            System.out.println("Author already exists.");
+        }
+    }
+
+    // Xóa tác giả
+    public void removeAuthor(String authorName) {
+        if (authors.contains(authorName)) {
+            authors.remove(authorName);
+        } else {
+            System.out.println("Author not found.");
+        }
+    }
+}
+
+Question 2: Alternatively, to compare items in the cart, instead of using Comparator, we can use the Comparable interface and override the compareTo()method. You can refer to the Java docs to see the information of this interface. 
+Suppose we are taking this Comparable interface approach.
+-	What class should implement the Comparable interface?
+-	In those classes, how should you implement the compareTo()method be to reflect the ordering that we want?
+-	Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+-	Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+
++ Lớp Media nên triển khai Comparable<Media> vì tất cả các loại media (Book, CompactDisc, DigitalVideoDisc) đều kế thừa từ Media. Điều này cho phép các đối tượng thuộc các lớp con có thể so sánh được dựa trên tiêu chí mặc định.
++ @Override
+public int compareTo(Media other) {
+    // So sánh theo title
+    int titleComparison = this.title.compareTo(other.title);
+    if (titleComparison != 0) {
+        return titleComparison; // Trả về kết quả so sánh title
+    }
+    // Nếu title giống nhau, so sánh theo cost
+    return Float.compare(this.cost, other.cost);
+}
++ Không, nếu chỉ dùng Comparable, chỉ có thể áp dụng một quy tắc sắp xếp mặc định.
+Nếu muốn hỗ trợ nhiều quy tắc sắp xếp (ví dụ: title → cost và cost → title), nên sử dụng Comparator để có tính linh hoạt hơn.
+
++ Cần override lại phương thức compareTo() trong lớp con DigitalVideoDisc
+
+package hust.soict.dsai.aims.media;
+public class DigitalVideoDisc extends Media implements Comparable<Media> {
+    private int length;
+
+    public DigitalVideoDisc(int id, String title, String category, float cost, int length) {
+        super(id, title, category, cost);
+        this.length = length;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    @Override
+    public int compareTo(Media other) {
+        if (other instanceof DigitalVideoDisc) {
+            DigitalVideoDisc otherDVD = (DigitalVideoDisc) other;
+
+            // So sánh theo title
+            int titleComparison = this.getTitle().compareTo(otherDVD.getTitle());
+            if (titleComparison != 0) {
+                return titleComparison;
+            }
+
+            // Nếu title giống nhau, so sánh length (giảm dần)
+            int lengthComparison = Integer.compare(otherDVD.getLength(), this.getLength());
+            if (lengthComparison != 0) {
+                return lengthComparison;
+            }
+
+            // Nếu length giống nhau, so sánh cost
+            return Float.compare(this.getCost(), otherDVD.getCost());
+        }
+        // Nếu không phải DVD, sử dụng quy tắc của Media
+        return super.compareTo(other);
+    }
+}
+
