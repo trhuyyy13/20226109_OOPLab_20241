@@ -1,0 +1,4 @@
+Câu hỏi 1:
+Nếu bạn tạo một constructor method để xây dựng 1 đĩa DVD theo tiêu đề sau đó tạo một constructor method để xây dựng 1 đĩa DVD theo danh mục. Java có cho phép bạn làm điều này không?
+Trả lời:
+- Trong Java, không thể tạo hai constructor trong cùng một lớp chỉ khác nhau bởi một tham số kiểu dữ liệu giống nhau(như String). Java sẽ không cho phép vì cả hai đều có cùng chữ ký (signature): mỗi constructor đều chỉ nhận một tham số kiểu String

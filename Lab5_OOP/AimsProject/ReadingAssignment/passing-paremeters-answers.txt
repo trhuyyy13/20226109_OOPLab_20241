@@ -1,0 +1,2 @@
+Câu hỏi:
+Java là truyền tham số bằng giá trị. Khi truyền một đối tượng vào phương thức, giá trị của tham chiếu (reference) được truyền, chứ không phải đối tượng thực sự. Phương thức có thể thay đổi trạng thái của đối tượng thông qua tham chiếu, nhưng không thể thay đổi tham chiếu ban đầu trong phương thức gọi.
